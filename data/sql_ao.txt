@@ -1,0 +1,16 @@
+alumno@SELECT * FROM alumno WHERE alumnoid in (SELECT student_id FROM payment_details WHERE payment_id in (SELECT id FROM payments WHERE created_at > "2015-12-31 23:59:59"));
+cliente@SELECT clienteid, primer_nombre, apellido_paterno, apellido_materno, sexo, relacion, nacimiento_pais, email, cliente_telefono, cliente_escuelaid  FROM cliente WHERE clienteid in (SELECT client_id FROM payments WHERE created_at > "2015-12-31 23:59:59");
+contracts@SELECT * FROM contracts WHERE  created_at > "2015-12-31 23:59:59";
+contrato@SELECT * FROM contrato WHERE  fecha > "2015-12-31";
+escuela@SELECT escuelaid, escuela,clave,cp,ciudad,estado,pais,escuela_status,metodo,niveles,esquema_pago,tipo_colegio,religioso,calendar_type,letra,calle,colonia,delegacion, zona,usar_misma_direccion, calle2,colonia2,cp2,ciudad2,delegacion2,estado2, zona2 FROM  escuela;
+payments@SELECT * FROM payments WHERE created_at > "2015-12-31 23:59:59";
+payment_details@SELECT * FROM payment_details WHERE payment_id in (SELECT id FROM payments WHERE created_at > "2015-12-31 23:59:59");
+precio@SELECT * FROM precio  WHERE created_at > "2015-12-31 23:59:59";
+reimbursments@SELECT * FROM reimbursments WHERE original_payment_id in (SELECT id FROM payments WHERE created_at > "2015-12-31 23:59:59");
+payments_gateways_accounts@SELECT * FROM payments_gateways_accounts;
+tokens@SELECT * FROM tokens WHERE created_at > "2015-12-31 23:59:59";
+pedido@SELECT * FROM pedido WHERE  fecha_pedido > "2015-12-31 23:59:59";
+material_del_pedido@SELECT * FROM material_del_pedido WHERE pedidoid in (SELECT pedidoid FROM pedido WHERE  fecha_pedido > "2015-12-31 23:59:59");
+insumo@SELECT insumoid,codigo,codigo2,nombre,cantidad,minima,proveedorid,costo,costo_moneda,tipo,precio,precio2,precio3,seccion,categoria,small,large,descripcion,participantes,materialid,gradoid,grado2id,idioma,metodo,unidad,tomo,nivel,ciclo,escuelaid,colegio,almacenid,tiempo_entrega,rango_edad1,rango_edad2,visible,marca,color,medida,familia,descuento_tasa,descuento_codigo,requiere_codigo,requiere_articulo,peso_kg,tasa_iva,envio,construir_codigo,generado,version,submaterialid,one_by_classroom  FROM insumo WHERE ciclo in ("2015-2016","2016-2017","2017-2018","2018-2019","2019-2020","2020-2021");
+packages@SELECT * FROM packages WHERE purchase_id in (SELECT precioid FROM precio  WHERE created_at > "2015-12-31 23:59:59");
+commissions_schools_rates@SELECT * FROM commissions_schools_rates WHERE purchase_id in (SELECT precioid FROM precio  WHERE created_at > "2015-12-31 23:59:59")
