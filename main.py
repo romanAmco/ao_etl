@@ -44,7 +44,7 @@ try:
     print(f"Elapsed time for mounting container {time_measure(time_init)}")
  # Init connection
     initial_start_time = time.time()
-    cnx = mysql.connector.connect(user='root', password=DOCKER_PASS, host='localhost', database=DOCKER_DATABASE,charset='utf8',port=config('DOCKER_DB_PORT'))
+    cnx = mysql.connector.connect(user='root', password=DOCKER_PASS, host='localhost', database=DOCKER_DATABASE,charset='utf8',port=DOCKER_DB_PORT)
 
 # Queries
     queries=queries_to_dict(FILE_SQL_BQ)
