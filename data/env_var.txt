@@ -1,0 +1,12 @@
+BUCKET_NAME=ao_database;
+BLOB_NAME=AO/live.bs.couch.tar.gz;
+PATH_DUMP=/home/devuser/etl_ao/dump;
+FILE_DUMP=live.ao-services.tar.gz;
+FILE_SQL=ao.sql;
+KEY_CREDENTIALS=/home/devuser/etl_ao/key/key.json;
+URI_URL=gs://ao_database/ao_live/live.ao-services.tar.gz;
+DOCKER_NAME_SQL=ao-sql;
+DOCKER_DATABASE=ao;
+DOCKER_PASS_DB=aodb123;
+DOCKER_DB_PORT=5200;
+
